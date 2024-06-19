@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ödev İçin İşe Alım Formu</title>
+    <style>
+		body {
+			background-color: #f2f2f2;
+		}
+		form {
+			background-color: white;
+			padding: 20px;
+			border: 2px solid blue;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>İşe Alım Formu</h1>
+	<form>
+	
+		<input type="text"  name="isim" placeholder="İsim" required><br><br>
+
+		<input type="text"  name="soyad" placeholder="Soyad" required><br><br>
+
+		Cinsiyet:
+		<input type="radio"  name="cinsiyet" value="erkek">
+		Erkek
+		<input type="radio"  name="cinsiyet" value="kadin">
+		Kadın
+
+        <br><br>
+
+		<textarea  name="adres" placeholder="Adres"></textarea><br><br>
+
+		<input type="tel"  name="telefon" placeholder="Telefon"><br><br>
+
+		<input type="email"  name="email" placeholder="E-Posta" required><br><br>
+
+		Doğum Tarihi:
+		<input type="date"  name="dogumTarihi"><br><br>
+
+		Eğitim Durumu:
+		<select  name="egitimDurumu">
+			<option value="">Seçiniz</option>
+			<option value="ilkokul">İlkokul</option>
+			<option value="ortaokul">Ortaokul</option>
+			<option value="lise">Lise</option>
+			<option value="üniversite">Üniversite</option>
+			<option value="yüksekLisans">Yüksek Lisans</option>
+			<option value="doktora">Doktora</option>
+		</select><br><br>
+
+		İş Deneyimi:
+		<input type="checkbox"  name="deneyim" value="var">
+		<label for="deneyim">Var</label><br><br>
+
+		Referanslar:
+		<input type="text"  name="referanslar"><br><br>
+
+        CV:
+		<input type="file" id="cv" name="cv"><br><br>
+
+		<input type="submit" value="Gönder">
+		<input type="reset" value="Temizle">
+	</form>
+</body>
+</html>

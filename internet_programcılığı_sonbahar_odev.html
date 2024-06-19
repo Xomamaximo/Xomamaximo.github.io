@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<h1>Rastgele Dizi Sıralama Ödevi</h1>
+
+<!-- JavaScript kodunu yazdığım script etiketi -->
+<script>
+
+    // Rastgele 20 elemanlı bir dizi oluşturan fonksiyon
+    function rastgeleDiziOlustur(uzunluk) {
+        // Burda boş bir dizi oluşturulur
+        let array = [];
+        // döngü verilen uzunluk kadar dönüyor
+    for (let i = 0; i < uzunluk; i++) {
+        // Math.random() ile 0 ile 1 arasında rastgele bir sayı verir
+        // Bu sayıyı 100 ile çarparak 0 ile 100 arasında sayılar oluşturulur
+        // Math.floor() ile bu sayı aşağıya yuvarlanır ve tamsayı oluşturulur
+        // array.push metodunu bu sayıları array in sonuna yerleştirmek için kullandım 
+        array.push(Math.floor(Math.random() * 100));
+    }
+    // Burda return rastgeleDiziOlustur fonksiyonu çağırıldığında diziyi göndermesini sağlıyor
+    return array;
+    }
+
+    // Bubble sort algoritması ile dizi sıralama fonksiyonu
+    function bubbleSort(sayilar) {
+        // n diye bi değişkene sayılar adlı dizinin uzunluğunu atıyorum ki tekrar tekrar aynı şeyi yazmayayım
+        let n = sayilar.length;
+        // bu döngü eleman sayısı kadar dönücek ve her eleman için aşağıdaki dögüyü çalıştıracak
+    for (let i = 0; i < n - 1; i++) {
+        // her çalıştığında bir dizi elemanı için aşağıdaki koşulu kontrol edicek
+        for (let j = 0; j < n - 1 - i; j++) {
+            // Eğer bir önceki eleman bir sonraki elemandan büyükse yerleri değişir 
+            if (sayilar[j] > sayilar[j + 1]) {
+                // 2 sayının yerini değiştirmek için sayıyı geçici bir değişkene yerleştiriyorum
+                let tut = sayilar[j];
+                sayilar[j] = sayilar[j + 1];
+                sayilar[j + 1] = tut;
+            }
+        }
+    }
+    }
+
+    // rastgeleDiziOlustur fonksiyonuna parametre olarak 20 verince 20 elemanlı bir dizi oluşturuyor 
+    // ve bunu bir değişkene atıyoruz
+    let rastgeleSayiDizim = rastgeleDiziOlustur(20);
+
+    // Burda oluşturulan dizi ekrana yazdırılıyor
+    // Sayı dizisinin elemanlarını ayırmak için join methodunu kullandım ve sayıları ( , ) ile ayırdım
+    document.write("<p>Oluşturulan Dizi: " + rastgeleSayiDizim.join(", ") + "</p>");
+
+    // bubbleSort fonksiyonunu çağırıp ürettiğimiz diziyi veriyoruz
+    bubbleSort(rastgeleSayiDizim);
+
+    // Sıralanan dizi ekrana yazdırılır
+    // Sayı dizisinin elemanlarını ayırmak için join methodunu kullandım ve sayıları ( , ) ile ayırdım
+    document.write("<p>Sıralanan Dizi: " + rastgeleSayiDizim.join(", ") + "</p>");
+</script>
+
+</body>
+</html>

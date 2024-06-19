@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolyom</title>
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: Arial;
+            background-color: teal;
+            margin: 0;
+            padding: 0;
+        }
+        /*En üstteki başlığın görünüşü*/
+        .baslik{
+            text-align: center;
+            background-color: #51bec2;
+            margin: 0;
+            margin-bottom: -10px;
+            padding: 15px;
+            height: 60px;
+        }
+        /* Menü Stili */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Üst bardaki tuşların görünüşü*/
+        nav ul {
+            margin: 0;
+        }
+
+        /* Üst bardaki tuşların görünüşü*/
+        nav ul li {
+            display: inline;
+            margin-right: 50px;
+        }
+
+        /* Üst bardaki tuşların görünüşü*/
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Form Stili */
+        form {
+            max-width: 300px;
+            margin: auto;
+            font-weight: bold;
+        }
+        /*metin girilen kısımların görünüşü*/
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 15px;
+        }
+        /*Gönder tuşu görünüşü*/
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            margin: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /*fotoğrafların gösterildiği kısım*/
+        .slaytkutusu {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            margin-top: 30px;
+        }
+ 
+
+        /* ileri ve geri tuşlarının görünüşü */
+        .geri, .ileri {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* ileri tuşunu fotoğrafların en sağına alır */
+        .ileri {
+            right: 0;
+        }
+
+
+        /* fotoğraf metninin görünüşü */
+        .metin {
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            padding: 15px;
+            margin: 10px;
+            bottom: 8px;
+            text-align: center;
+        }
+        /* yaptığım işler kısmını görünüşü*/
+        .yaptiklarim div{
+            width: 24%;
+            height: 200px; 
+            display:inline-block;
+            text-align: center;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="baslik">Web Sayfası Başlığı</h1>
+           
+    <!-- Menü -->
+    <nav>
+        <ul>
+            <li><a href="">Anasayfa</a></li>
+            <li><a href="">Hakkımda</a></li>
+            <li><a href="">İletişim</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Resim Galerisi -->
+    <div class="slaytkutusu">
+
+        <!-- Gösterilecek resimler ve altına metin -->
+        <div class="slaytim">
+          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+          <div class="metin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dignissimos quae recusandae fugiat veniam vero.</div>
+        </div>
+        <div class="slaytim">
+          <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
+          <div class="metin">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo.</div>
+        </div>
+        <div class="slaytim">
+          <img src="https://www.w3schools.com/howto/img_lights_wide.jpg" style="width:100%">
+          <div class="metin">Lorem ipsum dolor, sit amet consectetur adipisicing.</div>
+        </div>
+      
+        <!-- Geri ve İleri tuşları -->
+        <a class="geri" onclick="slaytigoster(simdikislayt += -1)">Geri</a>
+        <a class="ileri" onclick="slaytigoster(simdikislayt += 1)">İleri</a>
+      </div>
+
+        <!--önceki işlerimin özeti bölümü-->
+    <div class="yaptiklarim" >  
+        <div >
+            <h3>Bunları Yaptım</h3>
+            <img src="https://picsum.photos/300">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequatur iste quia voluptatum, veniam culpa!</p>
+        </div>
+        <div >
+            <h3>Bunları Yaptım</h3>
+            <img src="https://picsum.photos/299">
+            <p>Lorem ipsum dolor sit amet sante poku terman consectetur, adipisicing elit. Corrupti a quisquam maxime laboriosam!</p>
+        </div>
+        <div >
+            <h3>Bunları Yaptım</h3>
+            <img src="https://picsum.photos/301">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime quisquam aliquam, voluptatibus velit corrupti sint!</p>
+        </div>
+        <div >
+            <h3>Bunları Yaptım</h3>
+            <img src="https://picsum.photos/300/300">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque reprehenderit labore odio officiis rerum molestias!</p>
+        </div>
+    </div>
+   
+    <!-- Form -->
+    <div class="form-section" >
+        <h2 style="text-align: center;">İletişim Formu</h2>
+        <form id="contactForm">
+            <label id="name">Ad Soyad:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label id="email">E-posta:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mesaj:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>    
+    <!-- Tuşları çalıştıran kod -->
+    <script>
+        /* Şimdiki slayt 1 ve sayfa yüklenince 1. slayt ekranda gösteriliyor */
+        let simdikislayt = 1;
+        slaytigoster(simdikislayt);
+
+        /* Ne zaman hangi slayt gösterilecek ayarlayan foksiyon */
+        function slaytigoster(n) {
+
+        /* i ve slaytlar diye 2 değişken ayarlıyoruz yapıcağımız işlemler için */
+        let i;
+        let slaytlar = document.getElementsByClassName("slaytim");
+
+        /* 3. slaytı geçince şimdikislayt 1 olarak ayarlanır */
+        if (n > slaytlar.length) {simdikislayt = 1}
+
+        /* 1. slaytın altına geçince şimdikislayt 3 olarak ayarlanır */
+        if (n < 1) {simdikislayt = slaytlar.length}
+
+        /* Her fonksiyon çağırıldığında tüm fotoğrafları görünmez yapar */
+        for (i = 0; i < slaytlar.length; i++) {
+            slaytlar[i].style.display = "none";
+        }
+
+        /* şimdiki slayt 1 ise indexi 0 olan slayt ekrana block halinde yerleştirilir
+           Block şeklinde gösterilen öğe tüm satırı kapladığı için onu seçtim */
+        slaytlar[simdikislayt-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
